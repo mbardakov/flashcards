@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '@shoelace-style/shoelace/dist/themes/light.css';
 import './index.css';
+import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path';
+
+import { SlCard } from '@shoelace-style/shoelace/dist/react';
+import { SlButton } from '@shoelace-style/shoelace/dist/react';
+
+setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.74/dist/');
 
 class Card extends React.Component {
     render() {
         return (
-            <div className="card">
+            <SlCard className="inline card-basic">
                 {this.props.showBack ? this.props.values.back : this.props.values.front}
-            </div>
+            </SlCard>
         );
     }
 }
@@ -95,19 +102,19 @@ class Deck extends React.Component {
             <div>
                 <div className="observe">
                     <Card values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
-                    <button className="flip" onClick={this.flipCard}>Flip</button>
+                    <SlButton className="inline flip" onClick={this.flipCard}>Flip</SlButton>
                 </div>
                 <div className="interact">
                     <div className="buttonRow">
-                        <button onClick={this.correctRemove}>
+                        <SlButton onClick={this.correctRemove}>
                             Correct, remove
-                        </button>
-                        <button onClick={this.correctKeep}>
+                        </SlButton>
+                        <SlButton onClick={this.correctKeep}>
                             Correct, but keep
-                        </button>
-                        <button onClick={this.wrongKeep}>
+                        </SlButton>
+                        <SlButton onClick={this.wrongKeep}>
                             Wrong, try again later
-                        </button>
+                        </SlButton>
                     </div>
                     <div className="textbox">
                         <input type="text" placeholder="Add new card (front)" value={this.state.newFront} onChange={this.handleChangeFront}></input>
