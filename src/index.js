@@ -10,10 +10,20 @@ import { SlButton } from '@shoelace-style/shoelace/dist/react';
 setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.74/dist/');
 
 class Card extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showBack: false
+        }
+    }
+    flipCard = () => {
+        console.log('flipping card: ', this.state);
+        this.setState({showBack: !this.state.showBack});
+    }
     render() {
         return (
-            <SlCard className="inline card-basic">
-                {this.props.showBack ? this.props.values.back : this.props.values.front}
+            <SlCard onClick={this.flipCard} className="inline card-basic">
+                {this.state.showBack ? this.props.values.back : this.props.values.front}
             </SlCard>
         );
     }
@@ -39,7 +49,6 @@ class Deck extends React.Component {
             ],
             newFront: '',
             newBack: '',
-            showBack: false,
             currentCard: 0,
         };
     }
@@ -63,10 +72,6 @@ class Deck extends React.Component {
 
     handleChangeBack = (e) => {
         this.setState({newBack: e.target.value});
-    }
-
-    flipCard = () => {
-        this.setState({showBack: !this.state.showBack});
     }
 
     correctRemove = () => {
@@ -101,8 +106,7 @@ class Deck extends React.Component {
         return (
             <div>
                 <div className="observe">
-                    <Card values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
-                    <SlButton className="inline flip" onClick={this.flipCard}>Flip</SlButton>
+                    <Card  values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
                 </div>
                 <div className="interact">
                     <div className="buttonRow">
