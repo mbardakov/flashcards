@@ -1,5 +1,5 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 14px "Lucida Sans", Futura, sans-serif;
     margin: 20px;
 }
 
@@ -8,20 +8,22 @@ body {
 }
 
 .square-basic {
-    text-align: center;
+    box-sizing: border-box;
+    /* text-align: center; */
     border-color: #3f3f46;
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
     vertical-align: middle;
+    white-space: pre-line;
 }
 .card {
-    line-height: 600px;
     width: 100%;
+    padding: 50px;
+    line-height: 1.5rem;
     height: 600px;
 }
 .button {
-    line-height: 100px;
     width: 100%;
     height: 100px;
 }

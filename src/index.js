@@ -36,16 +36,28 @@ class Deck extends React.Component {
         this.state = {
             cards: [
                 {
-                    front: "What colour is a tomato?",
-                    back: "Red"
+                    front: "What are three responsibilities of citizenship?\n" +
+                    "a) Being loyal to Canada, recycling newspapers, serving in the navy, army or air force.\n" +
+                    "b) Obeying the law, taking responsibility for oneself and one’s family, serving on a jury.\n" +
+                    "c) Learning both official languages, voting in elections, belonging to a union.\n" +
+                    "d) Buying Canadian products, owning your own business, using less water.",
+                    back: "b) Obeying the law, taking responsibility for oneself and one’s family, serving on a jury."
                 },
                 {
-                    front: "What is 13 x 9 x 17",
-                    back: "1989"
+                    front: "What is the meaning of the Remembrance Day poppy?\n" +
+                    "a) To remember our Sovereign, Queen Elizabeth II.\n" +
+                    "b) To celebrate Confederation.\n" +
+                    "c) To honour prime ministers who have died.\n" +
+                    "d) To remember the sacrifice of Canadians who have served or died in wars up to the present day.",
+                    back: "d) To remember the sacrifice of Canadians who have served or died in wars up to the present day."
                 },
                 {
-                    front: "What do you call a collection of stories passed down over generations?",
-                    back: "folklore"
+                    front: "How are members of Parliament chosen?\n" +
+                    "a) They are appointed by the United Nations.\n" +
+                    "b) They are chosen by the provincial premiers.\n" +
+                    "c) They are elected by voters in their local constituency (riding).\n" +
+                    "d) They are elected by landowners and police chiefs.",
+                    back: "c) They are elected by voters in their local constituency (riding)."
                 }
             ],
             currentCard: 0,
