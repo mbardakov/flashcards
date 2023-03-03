@@ -91,6 +91,103 @@ class Deck extends React.Component {
                     "French Canadians (Acadians, Quebecers, people in smaller French-speaking communities across Canada),\n"+
                     "English Canadians",
                 },
+                {
+                    front: "Who are the Métis?",
+                    back: "The Métis are a distinct people of mixed Aboriginal and European ancestry, the majority of whom live in the Prairie provinces. They come from both French- and English-speaking backgrounds and speak their own dialect, Michif."
+                },
+                {
+                    front: "What does the word 'Inuit' mean?",
+                    back: "'Inuit' means 'the people' in the Inuktitut language"
+                },
+                {
+                    front: "What is meant by the term “responsible government”?",
+                    back: "Historically, the term meant 'The ministers of the Crown must have the support of a majority of the elected representatives in order to govern.'\nToday, if the government loses a confidence vote in the assembly it must resign."
+                },
+                {
+                    front: "Who was Sir Louis-Hippolyte La Fontaine?",
+                    back: "A champion of French language rights, who became the first head of a responsible government (similar to a prime minister) in Canada in 1849"
+                },
+                {
+                    front: "What did the Canadian Pacific Railway symbolize?",
+                    back: "Unity"
+                },
+                {
+                    front: "What does Confederation mean?",
+                    back: "From 1864 to 1867, representatives of Nova Scotia, New Brunswick and the Province of Canada, with British support, worked together to establish a new country. They created two levels of government: federal and provincial. The old Province of Canada was split into two new provinces: Ontario and Quebec, which, together with New Brunswick and Nova Scotia, formed the new country called the Dominion of Canada. Each province would elect its own legislature and have control of such areas as education and health."
+                },
+                {
+                    front: "What is the significance of the discovery of insulin by Sir Frederick Banting and Charles Best?",
+                    back: " Sir Frederick Banting of Toronto and Charles Best discovered insulin, a hormone to treat diabetes that has saved 16 million lives worldwide"
+                },
+                {
+                    front: "What does it mean to say that Canada is a constitutional monarchy?",
+                    back: "Canada's head of state is a hereditary Sovereign (Queen or King) who reigns in accordance with the Constitution: the rule of law."
+                },
+                {
+                    front: "What are the three branches of government?",
+                    back: "Executive, Legislative, and Judicial"
+                },
+                {
+                    front: "What is the difference between the role of the Queen and that of the Prime Minister?",
+                    back: "The Sovereign is a part of Parliament, playing an important, nonpartisan role as the focus of citizenship and allegiance, most visibly during royal visits to Canada. There is a clear distinction in Canada between the head of state—the Sovereign—and the head of government—the Prime Minister, who actually directs the governing of the country."
+                },
+                {
+                    front: "What is the highest honour that Canadians can receive?",
+                    back: "The Victoria Cross (V.C.) is the highest honour available to Canadians and is awarded for the most conspicuous bravery, a daring or pre-eminent act of valour or self-sacrifice, or extreme devotion to duty in the presence of the enemy. The V.C. has been awarded to 96 Canadians since 1854."
+                },
+                {
+                    front: "When you go to vote on election day, what do you do?",
+                    back: "The people in each electoral district vote for the candidate and political party of their choice. The candidate who receives the most votes becomes the MP for that electoral district."
+                },
+                {
+                    front: "Who is entitled to vote in Canadian federal elections?",
+                    back: "You are eligible to vote in a federal election or cast a ballot in a federal referendum if you are:\n" +
+                    "• a Canadian citizen; and\n" + 
+                    "• at least 18 years old on voting day; and\n" + 
+                    "• on the voters’ list.\n" + 
+                    "The voters’ lists used during federal elections and referendums are produced from the National Register of Electors by a neutral agency of Parliament called Elections Canada. This is a permanent database of Canadian citizens 18 years of age or older who are qualified to vote in federal elections and referendums."
+                },
+                {
+                    front: "In Canada, are you obliged to tell other people how you voted?",
+                    back: "No. Canadian law secures the right to a secret ballot. This means that no one can watch you vote and no one should look at how you voted. You may choose to discuss how you voted with others, but no one, including family members, your employer or union representative, has the right to insist that you tell them how you voted."
+                },
+                {
+                    front: "After an election, which party forms the government?",
+                    back: "Ordinarily, after an election, the leader of the political party with the most seats in the House of Commons is invited by the Governor General to form the government."
+                },
+                {
+                    front: "Who is your member of Parliament?",
+                    back: "Tim Louis, Kitchener-Constoga, Ontario (his office is across the street from us, at the plaza with the optometrist)"
+                },
+                {
+                    front: "What are the three levels of government?",
+                    back: "Local (or Municipal), Provincial, and Federal"
+                },
+                {
+                    front: "What is the role of the courts in Canada?",
+                    back: "Canada is governed by an organized system of laws. These laws are the written rules intended to guide people in our society. The courts settle disputes and the police enforce the laws."
+                },
+                {
+                    front: "In Canada, are you allowed to question the police about their service or conduct?",
+                    back: "You can also question the police about their service or conduct if you feel you need to. Almost all police forces in Canada have a process by which you can bring your concerns to the police and seek action."
+                },
+                {
+                    front: "Name two Canadian symbols.",
+                    back: "Possible answers:\n" + 
+                    "• The Canadian Crown,\n"+
+                    "• The Maple Leaf,\n"+
+                    "• The Fleur-de-lys,\n"+
+                    "• The Coat of Arms & Motto,\n"+
+                    "• The Beaver\n"
+                },
+                {
+                    front: "What provinces are sometimes referred to as the Atlantic Provinces?",
+                    back: "Newfoundland and Labrador, Prince Edward Island (PEI), Nova Scotia, and New Bruinswick"
+                },
+                {
+                    front: "What is the capital of the province or territory that you live in?",
+                    back: "Toronto"
+                },
             ],
             currentCard: 0,
         };
