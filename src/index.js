@@ -13,17 +13,18 @@ class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showBack: false
+            showback: false
         }
     }
-    flipCard = () => {
-        console.log('flipping card: ', this.state);
-        this.setState({showBack: !this.state.showBack});
+    static getDerivedStateFromProps(props, state) {
+        console.log('get derived state from props: ', props, 'state: ', state);
+        return {showback: props.showback};
     }
     render() {
+        console.log('rednering card with showback: ', this.state.showback);
         return (
-            <SlCard onClick={this.flipCard} className="inline card-basic">
-                {this.state.showBack ? this.props.values.back : this.props.values.front}
+            <SlCard className="inline card-basic" onClick={this.props.onClick}>
+                {this.state.showback ? this.props.values.back : this.props.values.front}
             </SlCard>
         );
     }
@@ -47,23 +48,8 @@ class Deck extends React.Component {
                     back: "folklore"
                 }
             ],
-            newFront: '',
-            newBack: '',
             currentCard: 0,
         };
-    }
-
-    addCard = () => {
-        console.log('adding card: ', this.state.newFront, this.state.newBack);
-        const cards = this.state.cards;
-        cards.push({
-            front: this.state.newFront,
-            back: this.state.newBack,
-        });
-        this.setState({cards: cards});
-        this.setState({newFront: ''});
-        this.setState({newBack: ''});
-        console.log('after adding: ', this.state.cards);
     }
 
     handleChangeFront = (e) => {
@@ -73,59 +59,33 @@ class Deck extends React.Component {
     handleChangeBack = (e) => {
         this.setState({newBack: e.target.value});
     }
-
-    correctRemove = () => {
-        if (this.state.cards.length <= 1) return;
-        const newCards = this.state.cards.slice(0, this.state.currentCard).concat(this.state.cards.slice(this.state.currentCard + 1, this.state.cards.length));        
-        this.setState({
-            cards: newCards,
-            currentCard: this.state.currentCard % this.state.cards.length,
-            showBack: false
-        });
-        console.log('after removing, cards is: ', this.state.cards, 'currentCard is: ', this.state.currentCard);
-    }
     
     correctKeep = () => {
         this.setState({
             currentCard: (this.state.currentCard + 1) % this.state.cards.length, 
-            showBack: false
+            showback: false
         });
-        console.log('after modifying, currentCard is: ', this.state.currentCard);
+        console.log('after modifying, currentCard is: ', this.state.currentCard, this.state.showback);
+        this.forceUpdate();
     }
 
-    wrongKeep = () => {
-        this.setState({
-            currentCard: (this.state.currentCard + 1) % this.state.cards.length, 
-            showBack: false
-        });
-        console.log('after modifying, currentCard is: ', this.state.currentCard);
+    flipCard = () => {
+        console.log('flipping card: ', this.state);
+        this.setState({showback: !this.state.showback});
     }
 
     render() {
-        console.log('cardToShow: ', this.state.cards[this.state.currentCard]);
+        console.log('cardToShow: ', this.state.cards[this.state.currentCard], this.state.showback);
         return (
-            <div>
+            <div className="container">
                 <div className="observe">
-                    <Card values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
+                    <Card onClick={this.flipCard} values={this.state.cards[this.state.currentCard]} showback={this.state.showback} />
                 </div>
                 <div className="interact">
                     <div className="buttonRow">
-                        <SlButton onClick={this.correctRemove}>
-                            Correct, remove
+                        <SlButton onClick={this.correctKeep} className="singleButton">
+                            Next Card
                         </SlButton>
-                        <SlButton onClick={this.correctKeep}>
-                            Correct, but keep
-                        </SlButton>
-                        <SlButton onClick={this.wrongKeep}>
-                            Wrong, try again later
-                        </SlButton>
-                    </div>
-                    <div className="textbox">
-                        <input type="text" placeholder="Add new card (front)" value={this.state.newFront} onChange={this.handleChangeFront}></input>
-                    </div>
-                    <div className="textbox">
-                        <input type="text" placeholder="Add new card (back)" value={this.state.newBack} onChange={this.handleChangeBack}></input>
-                        <button className="addCard" onClick={this.addCard}>Add Card</button>
                     </div>
                 </div>
             </div>
