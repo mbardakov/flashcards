@@ -106,7 +106,7 @@ class Deck extends React.Component {
         return (
             <div>
                 <div className="observe">
-                    <Card  values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
+                    <Card values={this.state.cards[this.state.currentCard]} showBack={this.state.showBack}/>
                 </div>
                 <div className="interact">
                     <div className="buttonRow">
