@@ -58,7 +58,39 @@ class Deck extends React.Component {
                     "c) They are elected by voters in their local constituency (riding).\n" +
                     "d) They are elected by landowners and police chiefs.",
                     back: "c) They are elected by voters in their local constituency (riding)."
-                }
+                },
+                {
+                    front: "Name two key documents that contain our rights and freedoms",
+                    back: "the Magna Carta and the Canadian Charter of Rights and Freedoms",
+                },
+                {
+                    front: "Identify four rights that Canadians enjoy",
+                    back: "Mobility Rights — Canadians can live and work anywhere they choose in Canada, enter and leave the country freely, and apply for a passport.\n" +
+                    "Aboriginal Peoples’ Rights — The rights guaranteed in the Charter will not adversely affect any treaty or other rights or freedoms of Aboriginal peoples.\n" + 
+                    "Official Language Rights and Minority Language Educational Rights — French and English have equal status in Parliament and throughout the government.\n" + 
+                    "Multiculturalism — A fundamental characteristic of the Canadian heritage and identity. Canadians celebrate the gift of one another’s presence and work hard to respect pluralism and live in harmony\n"
+                },
+                {
+                    front: "Name four fundamental freedoms that canadians enjoy",
+                    back: "Freedom of conscience and religion;\n" +
+                    "Freedom of thought, belief, opinion and expression, including freedom of speech and of the press;\n" +
+                    "Freedom of peaceful assembly\n" +
+                    "Freedom of association."
+                },
+                {
+                    front: "What is meant by the equality of women and men?",
+                    back: "In Canada, men and women are equal under the law. Canada’s openness and generosity do not extend to barbaric cultural practices that tolerate spousal abuse, “honour killings,” female genital mutilation, forced marriage or other gender-based violence. Those guilty of these crimes are severely punished under Canada’s criminal laws.",
+                },
+                {
+                    front: "What are some examples of taking responsibility for yourself and your family?",
+                    back: "Getting a job, taking care of one’s family and working hard in keeping with one’s abilities are important Canadian values. Work contributes to personal dignity and selfrespect, and to Canada’s prosperity.",
+                },
+                {
+                    front: "Who were the founding peoples of Canada?",
+                    back: "Aboriginal peoples (First Nations, Inuit, Métis),\n"+
+                    "French Canadians (Acadians, Quebecers, people in smaller French-speaking communities across Canada),\n"+
+                    "English Canadians",
+                },
             ],
             currentCard: 0,
         };

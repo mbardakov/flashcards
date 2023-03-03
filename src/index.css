@@ -9,7 +9,6 @@ body {
 
 .square-basic {
     box-sizing: border-box;
-    /* text-align: center; */
     border-color: #3f3f46;
     border-width: 1px;
     border-radius: 3px;
