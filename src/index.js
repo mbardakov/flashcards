@@ -23,9 +23,9 @@ class Card extends React.Component {
     render() {
         console.log('rednering card with showback: ', this.state.showback);
         return (
-            <SlCard className="inline card-basic" onClick={this.props.onClick}>
+            <div className="inline square-basic card" onClick={this.props.onClick}>
                 {this.state.showback ? this.props.values.back : this.props.values.front}
-            </SlCard>
+            </div>
         );
     }
 }
@@ -83,7 +83,7 @@ class Deck extends React.Component {
                 </div>
                 <div className="interact">
                     <div className="buttonRow">
-                        <SlButton onClick={this.correctKeep} className="singleButton">
+                        <SlButton onClick={this.correctKeep} className="singleButton button">
                             Next Card
                         </SlButton>
                     </div>
