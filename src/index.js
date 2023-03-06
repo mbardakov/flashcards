@@ -16,11 +16,9 @@ class Card extends React.Component {
         }
     }
     static getDerivedStateFromProps(props, state) {
-        console.log('get derived state from props: ', props, 'state: ', state);
         return {showback: props.showback};
     }
     render() {
-        console.log('rednering card with showback: ', this.state.showback);
         return (
             <div className="inline square-basic card" onClick={this.props.onClick}>
                 {this.state.showback ? this.props.values.back : this.props.values.front}
@@ -209,12 +207,10 @@ class Deck extends React.Component {
             currentCard: (this.state.currentCard + 1) % this.state.cards.length, 
             showback: false
         });
-        console.log('after modifying, currentCard is: ', this.state.currentCard, this.state.showback);
         this.forceUpdate();
     }
 
     flipCard = () => {
-        console.log('flipping card: ', this.state);
         this.setState({showback: !this.state.showback});
     }
 
@@ -222,12 +218,10 @@ class Deck extends React.Component {
         const cloneArray = this.state.cards.map(card => {return {...card}});
         for (let i = 0; i < this.state.cards.length; i++) {
             let swapIndex = Math.floor(Math.random() * this.state.cards.length);
-            console.log('math.random returned: ', Math.floor(Math.random() * this.state.cards.length));
             const temp = cloneArray[i];
             cloneArray[i] = cloneArray[swapIndex];
             cloneArray[swapIndex] = temp;
         }
-        console.log('after shuffling: ', cloneArray);
         this.setState({
             cards: cloneArray
         });
@@ -235,7 +229,6 @@ class Deck extends React.Component {
     }
 
     render() {
-        console.log('cardToShow: ', this.state.cards[this.state.currentCard], this.state.showback);
         return (
             <div className="container">
                 <div className="observe">
