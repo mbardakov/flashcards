@@ -4,7 +4,6 @@ import '@shoelace-style/shoelace/dist/themes/light.css';
 import './index.css';
 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path';
 
-import { SlCard } from '@shoelace-style/shoelace/dist/react';
 import { SlButton } from '@shoelace-style/shoelace/dist/react';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.74/dist/');
@@ -193,6 +192,10 @@ class Deck extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.shuffle();
+    }
+
     handleChangeFront = (e) => {
         this.setState({newFront: e.target.value});
     }
@@ -213,6 +216,22 @@ class Deck extends React.Component {
     flipCard = () => {
         console.log('flipping card: ', this.state);
         this.setState({showback: !this.state.showback});
+    }
+
+    shuffle = () => {
+        const cloneArray = this.state.cards.map(card => {return {...card}});
+        for (let i = 0; i < this.state.cards.length; i++) {
+            let swapIndex = Math.floor(Math.random() * this.state.cards.length);
+            console.log('math.random returned: ', Math.floor(Math.random() * this.state.cards.length));
+            const temp = cloneArray[i];
+            cloneArray[i] = cloneArray[swapIndex];
+            cloneArray[swapIndex] = temp;
+        }
+        console.log('after shuffling: ', cloneArray);
+        this.setState({
+            cards: cloneArray
+        });
+        this.forceUpdate();
     }
 
     render() {
